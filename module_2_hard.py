@@ -1,17 +1,12 @@
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-a = []
-not_a = []
-for i in numbers:
-    if i == 1:
-        continue
-    is_a = True
-    for j in range(2, i):
-        if i % j == 0:
-            is_a = False
-            break
-    if is_a:
-        a.append(i)
-    else:
-        not_a.append(i)
-print("Primes:", a)
-print("Not Primes:", not_a)
+n = int(input('Введите целое число от 3 до 20: '))
+def get_password(number):
+    pas = ''
+    for i in range(1, number):
+        for j in range(2, number):
+            if j <= i:
+                continue
+            if number % (i + j) == 0:
+                pas += str(i) + str(j)
+    return pas
+result = get_password(n)
+print('Пароль:', result)
